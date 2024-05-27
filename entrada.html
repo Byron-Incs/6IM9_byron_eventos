@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento</title>
+    <style>
+        /* Estilos CSS */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        .entry {
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .qr-code {
+            display: block;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido al evento</h1>
+        <div class="entry">
+            <p>Por favor, presenta tu entrada:</p>
+            <img src="codigo_qr_entrada.jpg" alt="Código QR de entrada" class="qr-code">
+            <p>Recuerda que debes estar a menos de 12 metros de distancia.</p>
+        </div>
+        <p>Una vez validada tu entrada, serás dirigido a tu asiento dentro del evento.</p>
+        <p>Si necesitas abandonar el evento, por favor realiza el check-out:</p>
+        <form action="checkout.php" method="post">
+            <label for="nombre_evento">Nombre del evento:</label><br>
+            <input type="text" id="nombre_evento" name="nombre_evento" required><br>
+            <label for="fecha_evento">Fecha del evento:</label><br>
+            <input type="date" id="fecha_evento" name="fecha_evento" required><br>
+            <label for="hora_salida">Hora de salida:</label><br>
+            <input type="time" id="hora_salida" name="hora_salida" required><br>
+            <label for="lugar">Lugar:</label><br>
+            <input type="text" id="lugar" name="lugar" required><br><br>
+            <input type="submit" value="Check-out">
+        </form>
+        <p>¡Esperamos que disfrutes del evento!</p>
+    </div>
+</body>
+</html>
