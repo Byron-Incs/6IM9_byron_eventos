@@ -9,26 +9,82 @@
             font-family: Arial, sans-serif;
             margin: 20px;
             line-height: 1.6;
+            background-color: #f4f4f4;
         }
-        h1 {
+        h1, h2 {
             color: #333;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .observaciones {
             margin-top: 20px;
             padding: 10px;
-            background-color: #f9f9f9;
+            background-color: #e9ecef;
             border-left: 4px solid #007bff;
+            border-radius: 4px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <h1>Proceso de Compra de Boletos</h1>
-    <p>Una vez seleccionado para uno o más eventos, el comprador adquiere los boletos correspondientes ingresando los detalles del evento, sus datos personales y el método de pago. El proceso incluye la validación de los datos de pago y asegura que la transacción sea segura, garantizando que los boletos se reciban correctamente.</p>
-    <div class="observaciones">
-        <h2>Observaciones:</h2>
-        <p>Debe incluir la validación de los datos de pago y asegurar la transacción segura.</p>
+    <div class="container">
+        <h1>Proceso de Compra de Boletos</h1>
+        <p>Una vez seleccionado para uno o más eventos, el comprador adquiere los boletos correspondientes ingresando los detalles del evento, sus datos personales y el método de pago. El proceso incluye la validación de los datos de pago y asegura que la transacción sea segura, garantizando que los boletos se reciban correctamente.</p>
+        <div class="observaciones">
+            <h2>Observaciones:</h2>
+            <p>Debe incluir la validación de los datos de pago y asegurar la transacción segura.</p>
+        </div>
+        <form>
+            <h2>Formulario de Pago</h2>
+            <label for="name">Nombre Completo:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="card-number">Número de Tarjeta:</label>
+            <input type="number" id="card-number" name="card-number" required>
+            
+            <label for="expiry-date">Fecha de Expiración:</label>
+            <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/AA" required>
+            
+            <label for="cvv">CVV:</label>
+            <input type="number" id="cvv" name="cvv" required>
+            
+            <button type="submit">Pagar</button>
+        </form>
     </div>
 </body>
 </html>
-
-
