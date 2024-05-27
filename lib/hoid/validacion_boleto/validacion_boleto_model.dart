@@ -1,19 +1,15 @@
-import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'dart:math';
-import 'dart:ui';
-import 'detalles_evento_widget.dart' show DetallesEventoWidget;
-import 'package:flutter/gestures.dart';
+import 'validacion_boleto_widget.dart' show ValidacionBoletoWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class DetallesEventoModel extends FlutterFlowModel<DetallesEventoWidget> {
+class ValidacionBoletoModel extends FlutterFlowModel<ValidacionBoletoWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
