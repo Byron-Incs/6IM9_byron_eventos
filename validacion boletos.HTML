@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Boletos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            color: #333;
+        }
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #0073e6;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005bb5;
+        }
+        .message {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Validar Boleto</h1>
+        <p>Introduce el código de tu boleto para verificar su validez.</p>
+        <input type="text" id="ticketCode" placeholder="Código de boleto">
+        <button onclick="validateTicket()">Validar</button>
+        <div id="message" class="message"></div>
+    </div>
+    
+    <script>
+        function validateTicket() {
+            const validCodes = ["ABC123", "XYZ789", "TICKET456"]; // Ejemplo de códigos válidos
+            const userCode = document.getElementById('ticketCode').value;
+            const messageElement = document.getElementById('message');
+
+            // Simular distancia (en metros) a la entrada
+            const distanceToEntrance = Math.random() * 20; // Generar una distancia aleatoria entre 0 y 20 metros
+
+            const eventStartTime = new Date(); // Suponiendo que el evento empieza ahora para la simulación
+            eventStartTime.setHours(eventStartTime.getHours() + 2); // Añadir 2 horas al tiempo actual
+            const currentTime = new Date();
+
+            if (validCodes.includes(userCode) && distanceToEntrance <= 12 && currentTime >= eventStartTime) {
+                messageElement.textContent = `Boleto válido. Estás a ${distanceToEntrance.toFixed(2)} metros de la entrada. ¡Disfruta el evento!`;
+                messageElement.style.color = "green";
+            } else {
+                if (!validCodes.includes(userCode)) {
+                    messageElement.textContent = "Código de boleto inválido. Por favor, verifica e intenta nuevamente.";
+                } else if (distanceToEntrance > 12) {
+                    messageElement.textContent = `Estás demasiado lejos de la entrada. Estás a ${distanceToEntrance.toFixed(2)} metros.`;
+                } else {
+                    messageElement.textContent = "El evento aún no ha comenzado o es demasiado temprano para validar el boleto.";
+                }
+                messageElement.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
+
