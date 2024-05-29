@@ -37,7 +37,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-        button {
+        button, input[type="submit"] {
             margin-top: 20px;
             padding: 10px;
             font-size: 16px;
@@ -47,7 +47,7 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        button:hover {
+        button:hover, input[type="submit"]:hover {
             background-color: #0056b3;
         }
     </style>
@@ -55,7 +55,7 @@
 <body>
     <div class="container">
         <h1>Generar FANID</h1>
-        <form id="fanid-form">
+        <form id="fanid-form" action="vistaboleto.html" method="get">
             <label for="full-name">Nombre Completo:</label>
             <input type="text" id="full-name" name="full-name" required>
 
@@ -77,17 +77,8 @@
             <label for="id-photo">Foto de tu Identificación Oficial:</label>
             <input type="file" id="id-photo" name="id-photo" accept="image/*" required>
 
-            <button type="submit">Generar FANID</button>
+            <input type="submit" value="Generar FANID">
         </form>
     </div>
-
-    <script>
-        document.getElementById('fanid-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            alert('FANID generado exitosamente!');
-            <a href=vistaboleto.html></a>
-            // Aquí puedes agregar la lógica para enviar los datos del formulario al servidor
-        });
-    </script>
 </body>
 </html>
