@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview del Boleto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .ticket {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid #007BFF; /* Cambiar el color según tu preferencia */
+        }
+        .ticket h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .ticket-info {
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+        .ticket-info p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .ticket-info strong {
+            font-weight: bold;
+        }
+        .ticket-info img {
+            max-width: 100%;
+            display: block;
+            margin-top: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="ticket">
+        <h2>Preview del Boleto</h2>
+        <div class="ticket-info">
+            <p><strong>Nombre Completo:</strong> <span id="preview-full-name">Juan Pérez</span></p>
+            <p><strong>Fecha de Nacimiento:</strong> <span id="preview-birth-date">1980-05-20</span></p>
+            <p><strong>Número de Identificación:</strong> <span id="preview-id-number">1234567890</span></p>
+            <p><strong>Correo Electrónico:</strong> <span id="preview-email">juan@example.com</span></p>
+            <p><strong>Número de Teléfono:</strong> <span id="preview-phone-number">1234567890</span></p>
+            <p><strong>Foto de Perfil:</strong></p>
+            <img id="preview-profile-photo" src="https://via.placeholder.com/150" alt="Foto de Perfil">
+            <p><strong>Foto de Identificación Oficial:</strong></p>
+            <img id="preview-id-photo" src="https://via.placeholder.com/150" alt="Foto de Identificación">
+        </div>
+    </div>
+</body>
+</html>
