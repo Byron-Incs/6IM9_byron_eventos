@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proceso de Verificación de Entrada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            line-height: 1.6;
+            color: #666;
+        }
+        .highlight {
+            color: #007BFF;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Proceso de Verificación de Entrada</h1>
+        <p>El día del evento, dos horas antes del inicio, el comprador deberá presentarse en la primera entrada.</p>
+        <p>Si se encuentra a menos de <span class="highlight">12 metros</span>, el código QR dinámico interactúa con la entrada para verificar que la misma coincida con el <span class="highlight">FANID</span>.</p>
+        <p>El proceso de verificación se realiza en dos pasos:</p>
+        <ol>
+            <li>Primero se valida el billete con tu compra.</li>
+            <li>Luego, tu <span class="highlight">FANID</span> con tu identificación oficial.</li>
+        </ol>
+        <button onclick="location.href='pagina_validacion.html';">Verificar Entrada</button>
+    </div>
+</body>
+</html>
