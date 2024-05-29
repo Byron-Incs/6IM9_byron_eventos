@@ -18,14 +18,45 @@
         }
         .container {
             background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
             text-align: center;
             max-width: 400px;
             width: 100%;
         }
         h1 {
+            color: #4c54af;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #555;
+        }
+        .ticket-info {
+            margin-top: 20px;
+            text-align: left;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+        }
+        .ticket-info p {
+            margin: 10px 0;
+            color: #333;
+        }
+        .ticket-info span {
+            font-weight: bold;
+            color: #000;
+        }
+        .event-info {
+            margin-bottom: 20px;
+        }
+        .event-info p {
+            margin: 5px 0;
+            font-size: 1.1em;
+        }
+        .event-info span {
+            font-weight: bold;
             color: #333;
         }
     </style>
@@ -34,6 +65,15 @@
     <div class="container">
         <h1>Boleto Validado</h1>
         <p>Tu boleto ha sido validado exitosamente. ¡Disfruta el evento!</p>
+        <div class="event-info">
+            <p><span>Nombre del Evento:</span> Flow Fest</p>
+            <p><span>Horario:</span> 15 de Junio de 2024, 20:00</p>
+        </div>
+        <div class="ticket-info">
+            <p><span>Nombre del Dueño:</span> Juan Pérez</p>
+            <p><span>Código de Compra:</span> ABC123456</p>
+            <p><span>FanID Asociado:</span> FAN78910</p>
+        </div>
     </div>
 </body>
 </html>
