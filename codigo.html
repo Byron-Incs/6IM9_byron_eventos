@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento y QR</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            margin-top: 20px;
+        }
+
+        .event-details {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .event-details h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .event-details p {
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        #timer {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Evento y QR</h1>
+        <img id="qrCode" src="negro.png" alt="Imagen Inicial">
+        <div class="event-details">
+            <h2>Detalles del Evento</h2>
+            <p>Nombre del Evento: <span id="eventName"></span></p>
+            <p>Fecha del Evento: <span id="eventDate"></span></p>
+            <p>Hora del Evento: <span id="eventTime"></span></p>
+        </div>
+        <div id="timer"></div>
+        <button id="activateQRBtn" class="btn" onclick="activateQR()">Activar QR</button>
+        <button id="deactivateQRBtn" class="btn" style="display: none;" onclick="deactivateQR()">Desactivar Boleto</button>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const eventName = urlParams.get('eventName');
+        const eventDate = urlParams.get('eventDate');
+        const eventTime = urlParams.get('eventTime');
+        
+        document.getElementById('eventName').textContent = eventName;
+        document.getElementById('eventDate').textContent = eventDate;
+        document.getElementById('eventTime').textContent = eventTime;
+
+        var countdown;
+
+        function activateQR() {
+            document.getElementById('activateQRBtn').disabled = true;
+            document.getElementById('qrCode').src = 'codigoQR.jpg'; // Cambiar la imagen del QR
+            document.getElementById('timer').textContent = 'Tiempo restante: 30 segundos';
+            var timer = 30;
+            countdown = setInterval(function() {
+                timer--;
+                document.getElementById('timer').textContent = 'Tiempo restante: ' + timer + ' segundos';
+                if (timer <= 0) {
+                    clearInterval(countdown);
+                    document.getElementById('qrCode').src = 'negro.png'; // Restaurar la imagen inicial
+                    document.getElementById('timer').textContent = '¡Tu boleto ha vencido!';
+                    document.getElementById('activateQRBtn').disabled = false; // Habilitar el botón nuevamente
+                    document.getElementById('activateQRBtn').style.display = 'inline-block'; // Mostrar el botón "Activar QR"
+                    document.getElementById('deactivateQRBtn').style.display = 'none'; // Ocultar el botón "Desactivar Boleto"
+                }
+            }, 1000);
+            document.getElementById('activateQRBtn').style.display = 'none'; // Ocultar el botón "Activar QR"
+            document.getElementById('deactivateQRBtn').style.display = 'inline-block'; // Mostrar el botón "Desactivar Boleto"
+        }
+
+        function deactivateQR() {
+            clearInterval(countdown);
+            document.getElementById('qrCode').src = 'negro.png'; // Restaurar la imagen inicial
+            document.getElementById('timer').textContent = ''; // Limpiar el temporizador
+            document.getElementById('activateQRBtn').disabled = false; // Habilitar el botón "Activar QR"
+            document.getElementById('activateQRBtn').style.display = 'inline-block'; // Mostrar el botón "Activar QR"
+            document.getElementById('deactivateQRBtn').style.display = 'none'; // Ocultar el botón "Desactivar Boleto"
+        }
+    </script>
+</body>
+</html>
