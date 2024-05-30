@@ -4,7 +4,107 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registro para Eventos</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+   
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #007BFF; 
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      border-bottom: 2px solid #007BFF;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    select {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #007BFF; 
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      background-color: #0069d9; 
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+
+    .registration {
+      background-color: #e9f7ef;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .schedule {
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -13,7 +113,7 @@
   <main>
     <section class="registration">
       <h2>Registro para Eventos</h2>
-      <form action="#" method="POST">
+      <form id="registrationForm" action="AsignacionBoletos.html" method="GET">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
         <label for="email">Correo Electrónico:</label>
@@ -42,5 +142,24 @@
   <footer>
     <p>© 2024 Registro para Eventos. Todos los derechos reservados.</p>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const evento = urlParams.get('evento');
+      const tipo = urlParams.get('tipo');
+      const fecha = urlParams.get('fecha');
+      const hora = urlParams.get('hora');
+
+      if (evento && tipo && fecha && hora) {
+        const evento1Select = document.getElementById('evento1');
+        const option = document.createElement('option');
+        option.value = `${evento} (${tipo}) - ${fecha} ${hora}`;
+        option.textContent = `${evento} (${tipo}) - ${fecha} ${hora}`;
+        option.selected = true;
+        evento1Select.appendChild(option);
+      }
+    });
+  </script>
 </body>
 </html>
