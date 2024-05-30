@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activar Evento</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        select, button {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Activar Evento</h1>
+        <form action="Entrada.html" method="get" id="activateEventForm">
+            <label for="eventName">Seleccionar Evento:</label>
+            <select id="eventName" name="eventName" required>
+                <option value="Evento 1">Evento 1</option>
+                <option value="Evento 2">Evento 2</option>
+                <option value="Evento 3">Evento 3</option>
+            </select><br>
+            <label for="eventTime">Seleccionar Hora:</label>
+            <select id="eventTime" name="eventTime" required>
+                <option value="09:00">9:00 AM</option>
+                <option value="13:00">1:00 PM</option>
+                <option value="18:00">6:00 PM</option>
+            </select><br>
+            <button type="submit">Activar Evento</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("activateEventForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            // Show a confirmation message
+            if (confirm("¿Desea activar el evento?")) {
+                // Redirect the user to Entrada.html after clicking "Aceptar" in the confirmation
+                window.location.href = "Entrada.html";
+            } else {
+                // Do nothing if the user clicks "Cancelar" in the confirmation
+            }
+        });
+    </script>
+</body>
+</html>
