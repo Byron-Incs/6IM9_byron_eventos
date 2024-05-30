@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boleto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .ticket {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .ticket h2 {
+            margin-top: 0;
+        }
+        .seat-map {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .seat-map div {
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+        .stage {
+            width: 100%;
+            height: 40px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+        .button-group {
+            margin-top: 20px;
+        }
+        .button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            margin-right: 10px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Boleto Generado</h1>
+        <div class="ticket">
+            <h2>Detalles del Boleto</h2>
+            <p><strong>Tipo de Boleto:</strong> VIP</p>
+            <p><strong>Nombre del Artista:</strong> Artista Famoso</p>
+            <p><strong>Usuario:</strong> Juan Pérez</p>
+            <p><strong>FanID:</strong> 123456789</p>
+            <p><strong>Fecha:</strong> 27/05/2024</p>
+            <p><strong>Precio:</strong> $150</p>
+            <p><strong>Asientos:</strong> A1, A2</p>
+            <p><strong>Cantidad:</strong> 2</p>
+            
+            <div class="seat-map">
+                <div>A1</div>
+                <div>A2</div>
+                <div class="stage">Escenario</div>
+            </div>
+        </div>
+        
+        <div class="button-group">
+            <a href="#" class="button">Guardar</a>
+            <a href="AsignacionBoletos.html" class="button">Regresar</a>
+        </div>
+    </div>
+</body>
+</html>

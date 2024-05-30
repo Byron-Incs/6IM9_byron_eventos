@@ -105,29 +105,29 @@
             <h2>Observaciones:</h2>
             <p>Debe incluir información precisa para garantizar que el boleto simulado se genere correctamente.</p>
         </div>
-        <form>
+        <form action="boleto.html" method="GET">
             <h2>Formulario de Asignación de Boletos</h2>
             <label for="ticket-type">Tipo de Boleto:</label>
-            <input type="text" id="ticket-type" name="ticket-type" required>
+            <input type="text" id="ticket-type" name="ticket-type" value="General" required>
             
             <label for="artist-name">Nombre del Artista:</label>
-            <input type="text" id="artist-name" name="artist-name" required>
+            <input type="text" id="artist-name" name="artist-name" value="Artista Desconocido" required>
             
             <label for="user-name">Nombre del Usuario:</label>
-            <input type="text" id="user-name" name="user-name" required>
-            
-            <label for="fan-id">FanID:</label>
-            <input type="file" id="fan-id" name="fan-id" required>
+            <input type="text" id="user-name" name="user-name" value="Usuario Anónimo" required>
             
             <label for="event-date">Fecha:</label>
-            <input type="date" id="event-date" name="event-date" required>
+            <input type="date" id="event-date" name="event-date" value="2024-12-31" required>
             
             <label for="price">Precio:</label>
-            <input type="number" id="price" name="price" required>
+            <input type="number" id="price" name="price" value="100" required>
             
             <label for="seats">Asientos:</label>
-            <input type="text" id="seats" name="seats" placeholder="A1, A2, ..." required>
+            <input type="text" id="seats" name="seats" value="A1, A2" required>
             
+            <label for="ticket">Cuantos boletos:</label>
+            <input type="number" id="ticket" name="ticket" value="1" required>
+
             <button type="submit">Generar Boleto</button>
         </form>
         
@@ -136,7 +136,6 @@
             <p><strong>Tipo de Boleto:</strong> <span id="display-ticket-type">VIP</span></p>
             <p><strong>Nombre del Artista:</strong> <span id="display-artist-name">Artista Famoso</span></p>
             <p><strong>Usuario:</strong> <span id="display-user-name">Juan Pérez</span></p>
-            <p><strong>FanID:</strong> <span id="display-fan-id">123456789</span></p>
             <p><strong>Fecha:</strong> <span id="display-event-date">27/05/2024</span></p>
             <p><strong>Precio:</strong> $<span id="display-price">150</span></p>
             <p><strong>Asientos:</strong> <span id="display-seats">A1, A2</span></p>
