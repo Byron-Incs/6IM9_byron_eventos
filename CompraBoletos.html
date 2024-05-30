@@ -56,6 +56,45 @@
         button:hover {
             background-color: #0056b3;
         }
+        
+        /* Estilo para la ventana emergente */
+        #popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+        /* Estilo para mostrar la ventana emergente cuando se activa */
+        #popup:target {
+            display: flex;
+        }
+        /* Estilos para el contenido de la ventana emergente */
+        #popup-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        /* Estilo para el botón de cerrar */
+        #close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #333;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        /* Estilo para el icono de cerrar */
+        #close-btn::before {
+            content: "\00D7";
+        }
     </style>
 </head>
 <body>
@@ -66,25 +105,42 @@
             <h2>Observaciones:</h2>
             <p>Debe incluir la validación de los datos de pago y asegurar la transacción segura.</p>
         </div>
-        <form>
+        <form id="payment-form">
             <h2>Formulario de Pago</h2>
             <label for="name">Nombre Completo:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" required value="Hoid Venture">
             
             <label for="email">Correo Electrónico:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" required value="hoidventure@example.com">
             
             <label for="card-number">Número de Tarjeta:</label>
-            <input type="number" id="card-number" name="card-number" required>
+            <input type="number" id="card-number" name="card-number" required value="1234567890123456">
             
             <label for="expiry-date">Fecha de Expiración:</label>
-            <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/AA" required>
+            <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/AA" required value="12/25">
             
             <label for="cvv">CVV:</label>
-            <input type="number" id="cvv" name="cvv" required>
+            <input type="number" id="cvv" name="cvv" required value="123">
             
-            <button type="submit">Pagar</button>
+            <!-- Agregamos un enlace que activa la ventana emergente -->
+            <a href="#popup" id="pay-button">Pagar</a>
         </form>
+    </div>
+
+    <!-- Ventana emergente para mostrar los datos ingresados -->
+    <div id="popup">
+        <div id="popup-content">
+            <!-- Botón de cierre -->
+            <a href="#" id="close-btn"></a>
+            <h2>Datos Ingresados</h2>
+            <!-- Aquí se mostrarán los datos ingresados -->
+            <p>Nombre: <span id="popup-name">Hoid Venture</span></p>
+            <p>Correo Electrónico: <span id="popup-email">hoidventure@example.com</span></p>
+            <p>Número de Tarjeta: <span id="popup-card-number">1234567890123456</span></p>
+            <p>Fecha de Expiración: <span id="popup-expiry-date">12/25</span></p>
+            <p>CVV: <span id="popup-cvv">123</span></p>
+            <p>Pagado</p>
+        </div>
     </div>
 </body>
 </html>
