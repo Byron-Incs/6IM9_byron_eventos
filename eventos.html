@@ -4,7 +4,123 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Consulta de Eventos</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #007BFF;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      border-bottom: 2px solid #007BFF;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="time"],
+    select {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #007BFF; 
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      background-color: #0069d9; 
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    .search {
+      background-color: #e9f7ef;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    .results,
+    .lifecycle {
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .resultado {
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-top: 1rem;
+      background-color: #f9f9f9;
+    }
+
+    .resultado h3 {
+      margin-top: 0;
+    }
+
+    .resultado button {
+      margin-top: 1rem;
+      display: block;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -13,7 +129,7 @@
   <main>
     <section class="search">
       <h2>Buscar Evento</h2>
-      <form action="#" method="GET">
+      <form id="searchForm" action="#" method="GET">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" placeholder="Nombre del evento">
         <label for="tipo">Tipo:</label>
@@ -32,6 +148,7 @@
     </section>
     <section class="results">
       <h2>Resultados de la Búsqueda</h2>
+      <div id="resultsContainer"></div>
     </section>
     <section class="lifecycle">
       <h2>Ciclo de Vida del Evento</h2>
@@ -40,5 +157,27 @@
   <footer>
     <p>© 2024 Consulta de Eventos. Todos los derechos reservados.</p>
   </footer>
+  <script>
+    document.getElementById('searchForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const nombre = document.getElementById('nombre').value;
+      const tipo = document.getElementById('tipo').value;
+      const fecha = document.getElementById('fecha').value;
+      const hora = document.getElementById('hora').value;
+
+      const resultado = `
+        <div class="resultado">
+          <h3>${nombre}</h3>
+          <p><strong>Tipo:</strong> ${tipo}</p>
+          <p><strong>Fecha:</strong> ${fecha}</p>
+          <p><strong>Hora:</strong> ${hora}</p>
+          <button onclick="location.href='solicitudDeBoletos.html'">Solicitar</button>
+        </div>
+      `;
+
+      document.getElementById('resultsContainer').innerHTML = resultado;
+    });
+  </script>
 </body>
 </html>
