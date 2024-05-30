@@ -63,7 +63,7 @@
     }
 
     button {
-      background-color: #007BFF; 
+      background-color: #007BFF;
       color: white;
       border: none;
       padding: 0.75rem;
@@ -73,7 +73,7 @@
     }
 
     button:hover {
-      background-color: #0069d9; 
+      background-color: #0069d9;
     }
 
     footer {
@@ -150,9 +150,6 @@
       <h2>Resultados de la Búsqueda</h2>
       <div id="resultsContainer"></div>
     </section>
-    <section class="lifecycle">
-      <h2>Ciclo de Vida del Evento</h2>
-    </section>
   </main>
   <footer>
     <p>© 2024 Consulta de Eventos. Todos los derechos reservados.</p>
@@ -172,7 +169,7 @@
           <p><strong>Tipo:</strong> ${tipo}</p>
           <p><strong>Fecha:</strong> ${fecha}</p>
           <p><strong>Hora:</strong> ${hora}</p>
-          <button onclick="location.href='solicitudDeBoletos.html'">Solicitar</button>
+          <button onclick="location.href='solicitudDeBoletos.html?evento=${encodeURIComponent(nombre)}&tipo=${encodeURIComponent(tipo)}&fecha=${encodeURIComponent(fecha)}&hora=${encodeURIComponent(hora)}'">Solicitar</button>
         </div>
       `;
 
