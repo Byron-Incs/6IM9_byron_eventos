@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asignación de Boletos - byronTickets</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            background-color: #0056b3;
+        }
+        .navbar-brand {
+            color: white !important;
+        }
+        .container {
+            background-color: #34495e;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        h1, h2 {
+            color: #ecf0f1;
+        }
+        .observaciones {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #2c3e50;
+            border-left: 4px solid #007bff;
+            border-radius: 4px;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            color: #333;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .ticket {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #2c3e50;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .seat-map {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .seat-map div {
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+        .stage {
+            width: 100%;
+            height: 40px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+        .form-img-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .form-img-container > div {
+            flex: 1;
+            padding: 10px;
+        }
+        .form-img-container img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-dark">
+
+        <a class="navbar-brand" href="index.html">byronTickets</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="EventosRey.html">Eventos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="solicitudDeBoletos.html">Solicitud de Boletos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="AsignacionBoletos.html">Asignación de Boletos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="CompraBoletos.html">Compra de Boletos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="FANID.html">FAN ID</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Entrada1.html">Entrada</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="validacion boletos.HTML">Validación de Boleto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ValidaciónFanID.html">Validación FAN ID</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    <div class="container">
+        <h1>Asignación de Boletos</h1>
+        <p>Ingrese los datos del boleto para asignar la información correspondiente al evento. Asegúrese de que todos los datos sean correctos antes de proceder.</p>
+        <div class="observaciones">
+            <h2>Observaciones:</h2>
+            <p>Debe incluir información precisa para garantizar que el boleto simulado se genere correctamente.</p>
+        </div>
+        <div class="form-img-container">
+            <div>
+                <form action="boleto.html" method="GET">
+                    <h2>Formulario de Asignación de Boletos</h2>
+                    <label for="ticket-type">Tipo de Boleto:</label>
+                    <input type="text" id="ticket-type" name="ticket-type" value="General">
+                    
+                    <label for="artist-name">Nombre del Artista:</label>
+                    <input type="text" id="artist-name" name="artist-name" value="Artista Desconocido">
+                    
+                    <label for="user-name">Nombre del Usuario:</label>
+                    <input type="text" id="user-name" name="user-name" value="Usuario Anónimo">
+                    
+                    <label for="event-date">Fecha:</label>
+                    <input type="date" id="event-date" name="event-date" value="2024-12-31">
+                    
+                    <label for="price">Precio:</label>
+                    <input type="number" id="price" name="price" value="100">
+                    
+                    <label for="seats">Asientos:</label>
+                    <input type="text" id="seats" name="seats" value="A1, A2">
+                    
+                    <label for="ticket">Cuantos boletos:</label>
+                    <input type="number" id="ticket" name="ticket" value="1">
+
+                    <button type="submit">Generar Boleto</button>
+                </form>
+            </div>
+            <div>
+                <img src="AsigB.png" alt="Imagen del Evento">
+            </div>
+        </div>
+        <div class="ticket">
+            <h2>Simulación del Boleto</h2>
+            <p><strong>Tipo de Boleto:</
+                <span id="display-ticket-type">VIP</span></p>
+                <p><strong>Nombre del Artista:</strong> <span id="display-artist-name">Artista Famoso</span></p>
+                <p><strong>Usuario:</strong> <span id="display-user-name">Juan Pérez</span></p>
+                <p><strong>Fecha:</strong> <span id="display-event-date">27/05/2024</span></p>
+                <p><strong>Precio:</strong> $<span id="display-price">150</span></p>
+                <p><strong>Asientos:</strong> <span id="display-seats">A1, A2</span></p>
+                
+                <div class="seat-map">
+                    <div>A1</div>
+                    <div>A2</div>
+                    <div class="stage">Escenario</div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+    </html>
+    

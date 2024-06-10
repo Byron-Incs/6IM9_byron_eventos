@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proceso de Verificación de FANID</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+        }
+        .navbar {
+            background-color: #0056b3;
+        }
+        .navbar-brand {
+            color: white !important;
+        }
+        .navbar-nav .nav-link {
+            color: white !important;
+        }
+        .navbar-nav .nav-link.btn {
+            color: #0056b3 !important;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #34495e;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #ecf0f1;
+        }
+        p, ol {
+            line-height: 1.6;
+            color: #ecf0f1;
+        }
+        .highlight {
+            color: #007BFF;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="index.html">byronTickets</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="EventosRey.html">Eventos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="solicitudDeBoletos.html">Solicitud de Boletos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="AsignacionBoletos.html">Asignación de Boletos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="CompraBoletos.html">Compra de Boletos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="FANID.html">FAN ID</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Entrada1.html">Entrada</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="validacion boletos.HTML">Validación de Boleto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ValidacionFanID.html">Validación FAN ID</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <h1>Proceso de Verificación de FANID</h1>
+        <p>El día del evento, dos horas antes del inicio, el comprador deberá presentarse en la primera entrada.</p>
+        <p>Si se encuentra a menos de <span class="highlight">12 metros</span>, el código QR dinámico interactúa con la entrada para verificar que la misma coincida con el <span class="highlight">FANID</span>.</p>
+        <p>El proceso de verificación se realiza en dos pasos:</p>
+        <ol>
+            <li>Primero se valida el billete con tu compra.</li>
+            <li>Luego, tu <span class="highlight">FANID</span> con tu identificación oficial.</li>
+        </ol>
+        <button onclick="location.href='pagina_validacion.html';">Verificar documentos</button>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -3,37 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage - Boletera Ticketmaster</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Venta de Tickets</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar {
+            background-color: #0056b3;
+        }
+        .navbar-brand {
+            color: white !important;
+        }
+        .navbar-nav .nav-link {
+            color: white !important;
+        }
+        .navbar-nav .nav-link.btn {
+            color: #0056b3 !important;
+        }
+        .event-card {
+            margin: 10px 0;
+        }
+        .main-banner img {
+            width: 100%;
+            height: auto;
+        }
+        .event-images img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <h1>Boletera Ticketmaster</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="consulta_eventos.html">Consulta de Eventos</a></li>
-            <li><a href="registro_eventos.html">Registro para Eventos</a></li>
-            <li><a href="validacion_boletos.html">Validación de Boletos</a></li>
-            <li><a href="generar_fanid.html">Generar FANID</a></li>
-            <li><a href="verificacion_entrada.html">Proceso de Verificación de Entrada</a></li>
-            <li><a href="evento.html">Evento</a></li>
-            <li><a href="asignacion_boletos.html">Asignación de Boletos</a></li>
-            <li><a href="compra_boletos.html">Proceso de Compra de Boletos</a></li>
-        </ul>
+<body style="background-color: #2c3e50; color: #ecf0f1;">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">byronTickets</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="EventosRey.html">Eventos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="solicitudDeBoletos.html">Solicitud de Boletos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="DescripcionEvento.html">Detalles del Evento</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="CompraBoletos.html">Compra de Boletos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="FANID.html">FAN ID</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Entrada1.html">Entrada</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="validacion boletos.HTML">Validación de Boleto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ValidaciónFanID.html">Validación FAN ID</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
     </nav>
-    <main>
-        <section class="intro">
-            <h2>Bienvenido a Ticketmaster</h2>
-            <p>Tu portal de confianza para encontrar y gestionar entradas a tus eventos favoritos. Explora nuestras opciones y disfruta de una experiencia sin igual.</p>
-        </section>
-        <section class="featured">
-            <h2>Eventos Destacados</h2>
-            <p>Consulta los eventos más populares y adquiere tus boletos hoy mismo.</p>
-        </section>
-    </main>
-    <footer>
-        <p>©️ 2024 Ticketmaster. Todos los derechos reservados.</p>
-    </footer>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <!-- Main Banner -->
+        <div class="row main-banner">
+            <div class="col-md-4">
+                <a href="DescripcionEvento.html"><img src="AfterLife.jpg" alt="Event 1"></a>
+            </div>
+            <div class="col-md-4">
+                <a href="DescripcionEvento.html"><img src="ferxo.png" alt="Event 2"></a>
+            </div>
+            <div class="col-md-4">
+                <a href="DescripcionEvento.html"><img src="horizontal.png" alt="Event 3"></a>
+            </div>
+        </div>
+        <hr>
+        <!-- Hottest Events -->
+        <h3 class="text-center my-4">Hottest Events</h3>
+        <div class="row event-images">
+            <div class="col-md-3 event-card">
+                <a href="DescripcionEvento.html"><img src="driver.png" alt="The Driver Era"></a>
+                <h5 class="text-center">The Driver Era</h5>
+            </div>
+            <div class="col-md-3 event-card">
+                <a href="DescripcionEvento.html"><img src="guts.png" alt="Guts Olivia Rodrigo"></a>
+                <h5 class="text-center">Guts Olivia Rodrigo</h5>
+            </div>
+            <div class="col-md-3 event-card">
+                <a href="DescripcionEvento.html"><img src="DanniOcena.png" alt="Danny Ocean"></a>
+                <h5 class="text-center">Danny Ocean</h5>
+            </div>
+            <div class="col-md-3 event-card">
+                <a href="DescripcionEvento.html"><img src="edc.jpeg" alt="Event 4"></a>
+                <h5 class="text-center">EDC</h5>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

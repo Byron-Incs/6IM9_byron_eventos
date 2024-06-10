@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambios de Eventos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            background-color: #0056b3;
+        }
+        .navbar-brand {
+            color: white !important;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .form-container {
+            background-color: #34495e;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        label {
+            margin-top: 10px;
+        }
+        button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-dark">
+
+        <a class="navbar-brand" href="index.html">byronTickets</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="EventosRey.html">Eventos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="solicitudDeBoletos.html">Solicitud de Boletos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="AsignacionBoletos.html">Asignación de Boletos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="CompraBoletos.html">Compra de Boletos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="FANID.html">FAN ID</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Entrada1.html">Entrada</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="validacion boletos.HTML">Validación de Boleto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ValidaciónFanID.html">Validación FAN ID</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    <div class="container">
+        <div class="form-container">
+            <h1>Cambios de Eventos</h1>
+            <form onsubmit="showMessage(event)">
+                <div class="form-group">
+                    <label for="eventCode">Código del Evento</label>
+                    <input type="text" class="form-control" id="eventCode" placeholder="Código del Evento">
+                </div>
+                <div class="form-group">
+                    <label for="newEventName">Nuevo Nombre del Evento</label>
+                    <input type="text" class="form-control" id="newEventName" placeholder="Nuevo Nombre del Evento">
+                </div>
+                <div class="form-group">
+                    <label for="newEventDate">Nueva Fecha</label>
+                    <input type="date" class="form-control" id="newEventDate">
+                </div>
+                <div class="form-group">
+                    <label for="newEventTime">Nueva Hora</label>
+                    <input type="time" class="form-control" id="newEventTime">
+                </div>
+                <button type="submit" class="btn btn-warning">Actualizar Evento</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        function showMessage(event) {
+            event.preventDefault();
+            alert('Evento actualizado correctamente');
+        }
+    </script>
+</body>
+</html>

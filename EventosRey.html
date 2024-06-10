@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta de Eventos</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background-color: #0056b3;
+       color: white;
+    }
+
+    .navbar-brand {
+      color: white !important;
+      color: white;
+    }
+
+    .container {
+      background-color: #34495e;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+      max-width: 800px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ecf0f1;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+    }
+
+    label {
+      margin-top: 10px;
+      color: #ecf0f1;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="tel"],
+    input[type="file"] {
+      margin-top: 5px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      color: #333;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px;
+      font-size: 16px;
+      color: white;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .buttonA {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #28a745; /* Color verde */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none; 
+  text-align: center;
+}
+
+.buttonA:hover {
+  background-color: #218838; 
+}
+
+  </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-dark">
+
+    <a class="navbar-brand" href="index.html">byronTickets</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="EventosRey.html">Eventos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="solicitudDeBoletos.html">Solicitud de Boletos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="AsignacionBoletos.html">Asignación de Boletos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="CompraBoletos.html">Compra de Boletos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="FANID.html">FAN ID</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Entrada1.html">Entrada</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="validacion boletos.HTML">Validación de Boleto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="ValidacionFanID.html">Validación FAN ID</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  <div class="container">
+    <h1>Eventos</h1>
+      <section class="search">
+        <h2>Buscar Evento</h2>
+        <form id="searchForm" action="#" method="GET">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Nombre del evento">
+          <label for="tipo">Tipo:</label>
+          <select id="tipo" name="tipo">
+            <option value="">Seleccionar tipo</option>
+            <option value="concierto">Concierto</option>
+            <option value="deporte">Deporte</option>
+            <option value="teatro">Teatro</option>
+          </select>
+          <label for="fecha">Fecha:</label>
+          <input type="date" id="fecha" name="fecha">
+          <label for="hora">Hora:</label>
+          <input type="time" id="hora" name="hora">
+          <button type="submit">Buscar</button>
+          <a href="index.html" class="buttonA">Inicio</a>
+
+        </form>
+      </section>
+      <section class="results">
+        <h2>Resultados de la Búsqueda</h2>
+        <div id="resultsContainer"></div>
+      </section>
+  </div>
+
+  <footer>
+    
+  </footer>
+  <script>
+    document.getElementById('searchForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const nombre = document.getElementById('nombre').value;
+      const tipo = document.getElementById('tipo').value;
+      const fecha = document.getElementById('fecha').value;
+      const hora = document.getElementById('hora').value;
+
+      const resultado = `
+        <div class="resultado">
+          <h3>${nombre}</h3>
+          <p><strong>Tipo:</strong> ${tipo}</p>
+          <p><strong>Fecha:</strong> ${fecha}</p>
+          <p><strong>Hora:</strong> ${hora}</p>
+          <button onclick="location.href='solicitudDeBoletos.html?evento=${encodeURIComponent(nombre)}&tipo=${encodeURIComponent(tipo)}&fecha=${encodeURIComponent(fecha)}&hora=${encodeURIComponent(hora)}'">Solicitar</button>
+        </div>
+      `;
+
+      document.getElementById('resultsContainer').innerHTML = resultado;
+    });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
